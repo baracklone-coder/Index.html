@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Message from Uciha Barack ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at center,
+                #4b003f 0%,
+                #210021 45%,
+                #080008 100%);
+
+            color: white;
+        }
+
+
+        /* =================================
+           OPENING
+        ================================= */
+
+        #opening {
+
+            position: fixed;
+            inset: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 100;
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+
+        #opening.hide {
+
+            opacity: 0;
+
+            transform: scale(1.5);
+
+            pointer-events: none;
+        }
+
+
+        .intro-title {
+
+            font-size: 14px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            opacity: .6;
+
+            margin-bottom: 70px;
+        }
+
+
+        /* =================================
+           HEART
+        ================================= */
+
+        .heart {
+
+            width: 85px;
+            height: 85px;
+
+            background: #ff2d75;
+
+            position: relative;
+
+            transform: rotate(-45deg);
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 20px #ff2d75,
+                0 0 50px #ff2d75,
+                0 0 90px rgba(255,45,117,.5);
+
+            animation: heartbeat 1.2s infinite;
+        }
+
+
+        .heart::before,
+        .heart::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 85px;
+            height: 85px;
+
+            background: #ff2d75;
+
+            border-radius: 50%;
+        }
+
+
+        .heart::before {
+
+            top: -42px;
+            left: 0;
+        }
+
+
+        .heart::after {
+
+            top: 0;
+            left: 42px;
+        }
+
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform:
+                    rotate(-45deg)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    rotate(-45deg)
+                    scale(1.18);
+            }
+        }
+
+
+        .tap {
+
+            margin-top: 65px;
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            opacity: .55;
+
+            animation: blink 1.5s infinite;
+        }
+
+
+        @keyframes blink {
+
+            0%, 100% {
+                opacity: .3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+
+        /* =================================
+           MESSAGE PAGE
+        ================================= */
+
+        #messagePage {
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition:
+                opacity 1.2s ease,
+                transform 1.2s ease;
+        }
+
+
+        #messagePage.show {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        .content {
+
+            max-width: 600px;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        .small-title {
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            opacity: .5;
+
+            margin-bottom: 20px;
+        }
+
+
+        h1 {
+
+            font-size: 34px;
+
+            margin-bottom: 45px;
+
+            text-shadow:
+                0 0 15px rgba(255,255,255,.3);
+        }
+
+
+        #message {
+
+            min-height: 80px;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            opacity: .9;
+
+            margin-bottom: 35px;
+        }
+
+
+        .cursor {
+
+            display: inline-block;
+
+            width: 2px;
+            height: 20px;
+
+            background: white;
+
+            margin-left: 4px;
+
+            animation: cursorBlink .7s infinite;
+        }
+
+
+        @keyframes cursorBlink {
+
+            0%, 50% {
+                opacity: 1;
+            }
+
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+
+        .message-heart {
+
+            margin: 0 auto 45px;
+
+            transform: scale(.45) rotate(-45deg);
+
+            animation:
+                heartbeat 1.2s infinite;
+
+            cursor: pointer;
+        }
+
+
+        .instruction {
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            opacity: .4;
+        }
+
+
+        /* =================================
+           FLOATING HEARTS
+        ================================= */
+
+        .floating-heart {
+
+            position: fixed;
+
+            bottom: -50px;
+
+            font-size: 20px;
+
+            pointer-events: none;
+
+            animation:
+                floatUp linear forwards;
+
+            z-index: 1;
+        }
+
+
+        @keyframes floatUp {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(.7);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .8;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg)
+                    scale(1.4);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =================================
+           HEART BURST
+        ================================= */
+
+        .burst {
+
+            position: fixed;
+
+            left: 50%;
+            top: 50%;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            z-index: 200;
+
+            animation: burst 1.2s ease-out forwards;
+        }
+
+
+        @keyframes burst {
+
+            0% {
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(.2);
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translate(
+                        calc(-50% + var(--x)),
+                        calc(-50% + var(--y))
+                    )
+                    scale(1.5);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 27px;
+            }
+
+            #message {
+                font-size: 17px;
+            }
+
+            .intro-title {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         OPENING
+    ================================= -->
+
+    <section id="opening">
+
+        <div class="intro-title">
+              A little stuff...
+        </div>
+
+        <div
+            class="heart"
+            onclick="openMessage()">
+        </div>
+
+        <div class="tap">
+              TAP TO SUCK IT AND..
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         MESSAGE
+    ================================= -->
+
+    <section id="messagePage">
+
+        <div class="content">
+
+            <div class="small-title">
+                For you
+            </div>
+
+
+            <h1>
+                from<br>
+               
+                <i>Sofil Mubarok</i>
+            </h1>
+
+
+          
+            <div class="message-heart heart"
+                 onclick="nextMessage()">
+            </div>
+
+
+            <div id="message">
+                <span class="cursor"></span>
+            </div>
+
+
+            <div class="instruction">
+                TAP THE HEART TO CONTINUE
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script>
+
+
+        /* =================================
+           MESSAGES
+        ================================= */
+
+        const messages = [
+
+            "hmm apa ya ,jadi begini...",
+
+            "Mungkin sederhana, tapi tidak semua hal sederhana mudah untuk diungkapkan.",
+
+            "Ada orang-orang yang datang ke hidup kita, lalu meninggalkan sesuatu yang tidak mudah dilupakan.",
+
+            "Bukan karena mereka sempurna...",
+
+            "Tapi karena kehadiran mereka pernah membuat suatu bagian dari hidup kita terasa sedikit berbeda.",
+
+            "(Batuk dikit)...",
+
+            "Hanya ingin kamu tahu bahwa pernah ada seseorang yang mendoakanmu diam-diam.",
+
+            "Semoga kamu selalu menemukan alasan untuk tersenyum.",
+
+            "Semoga langkahmu selalu membawa kamu menjadi pribadi yang lebih baik.",
+
+            "Dan apa pun yang telah dan akan terjadi nanti...",
+
+            "Terima kasih karena menjadi bagian dari cerita hidup gw. ❤️"
+
+        ];
+
+
+        let currentMessage = 0;
+
+        let typing = false;
+
+
+        /* =================================
+           OPEN MESSAGE
+        ================================= */
+
+        function openMessage() {
+
+            createBurst();
+
+            const opening =
+                document.getElementById("opening");
+
+            const page =
+                document.getElementById("messagePage");
+
+
+            opening.classList.add("hide");
+
+
+            setTimeout(() => {
+
+                opening.style.display = "none";
+
+                page.classList.add("show");
+
+                startTyping();
+
+            }, 900);
+        }
+
+
+
+        /* =================================
+           NEXT MESSAGE
+        ================================= */
+
+        function nextMessage() {
+
+            if (typing) return;
+
+            createBurst();
+
+            currentMessage++;
+
+            if (currentMessage >= messages.length) {
+
+                currentMessage = 0;
+            }
+
+            startTyping();
+        }
+
+
+
+        /* =================================
+           TYPING EFFECT
+        ================================= */
+
+        function startTyping() {
+
+            const element =
+                document.getElementById("message");
+
+            element.innerHTML =
+                '<span class="cursor"></span>';
+
+
+            const text =
+                messages[currentMessage];
+
+            let i = 0;
+
+            typing = true;
+
+
+            const interval =
+                setInterval(() => {
+
+                    if (i < text.length) {
+
+                        element.innerHTML =
+                            text.substring(0, i + 1)
+                            +
+                            '<span class="cursor"></span>';
+
+                        i++;
+
+                    } else {
+
+                        clearInterval(interval);
+
+                        typing = false;
+                    }
+
+                }, 45);
+        }
+
+
+
+        /* =================================
+           HEART BURST
+        ================================= */
+
+        function createBurst() {
+
+            const hearts = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖",
+                "💘"
+            ];
+
+
+            for (let i = 0; i < 18; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.className = "burst";
+
+                heart.innerHTML =
+                    hearts[
+                        Math.floor(
+                            Math.random() * hearts.length
+                        )
+                    ];
+
+
+                const x =
+                    (Math.random() - .5) * 500;
+
+                const y =
+                    (Math.random() - .5) * 500;
+
+
+                heart.style.setProperty(
+                    "--x",
+                    x + "px"
+                );
+
+                heart.style.setProperty(
+                    "--y",
+                    y + "px"
+                );
+
+
+                document.body.appendChild(heart);
+
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 1300);
+            }
+        }
+
+
+
+        /* =================================
+           FLOATING HEART GENERATOR
+        ================================= */
+
+        function createFloatingHeart() {
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.className =
+                "floating-heart";
+
+
+            const hearts = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖",
+                "💘",
+                "💝"
+            ];
+
+
+            heart.innerHTML =
+                hearts[
+                    Math.floor(
+                        Math.random() * hearts.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.animationDuration =
+                (4 + Math.random() * 5) + "s";
+
+
+            heart.style.fontSize =
+                (15 + Math.random() * 25) + "px";
+
+
+            document.body.appendChild(heart);
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 9000);
+        }
+
+
+        /* Buat love terus-terusan */
+
+        setInterval(
+            createFloatingHeart,
+            700
+        );
+
+
+    </script>
+
+</body>
+
+</html>
